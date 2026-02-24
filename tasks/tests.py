@@ -64,7 +64,6 @@ class TaskManagerAPITest(APITestCase):
             {"title": "Task 1", "description": "Test"},
             **self.auth_header
         )
-        print(response.data) 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     # View list of task - READ
@@ -75,7 +74,6 @@ class TaskManagerAPITest(APITestCase):
             reverse("task-list"),
             **self.auth_header
         )
-        print(response.data) 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     #View Single Task - READ
@@ -86,7 +84,6 @@ class TaskManagerAPITest(APITestCase):
             reverse("task-detail", args=[task.id]),
             **self.auth_header
         )
-        print(response.data) 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # 3) Test Case -  Update
@@ -102,7 +99,6 @@ class TaskManagerAPITest(APITestCase):
             },
             **self.auth_header
         )
-        print(response.data) 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # 4)- Test Case - Delete
@@ -113,5 +109,4 @@ class TaskManagerAPITest(APITestCase):
             reverse("task-detail", args=[task.id]),
             **self.auth_header
         )
-        print(response.data) 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)

@@ -9,8 +9,7 @@ from rest_framework.pagination import PageNumberPagination
 from .serializers import TaskSerializer, UserRegisterSerializer
 from .models import Task
 
-
-
+#API to Register User
 class RegisterAPIView(APIView):
     permission_classes = [permissions.AllowAny]
 
@@ -21,7 +20,7 @@ class RegisterAPIView(APIView):
             return Response({"message": "User registered successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+#API to Create New Task & view task in list format
 class TaskListCreateAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -54,8 +53,9 @@ class TaskListCreateAPIView(APIView):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
 
-
+#API to Update, Delete and Read Single record 
 class TaskDetailAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, IsOwnerOrAdmin]
 
@@ -80,7 +80,4 @@ class TaskDetailAPIView(APIView):
     def delete(self, request, pk):
         task = self.get_object(pk)
         task.delete()
-        return Response(
-            {"message": "Task deleted successfully"},
-            status=status.HTTP_204_NO_CONTENT
-        )
+        return Response({"message": "Task deleted successfully"},status=status.HTTP_204_NO_CONTENT)
