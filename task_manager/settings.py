@@ -149,4 +149,3 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
-TEMPLATES[0]['DIRS'] = [BASE_DIR / "templates"]
