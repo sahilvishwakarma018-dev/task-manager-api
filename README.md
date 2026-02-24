@@ -41,7 +41,7 @@ The application uses JWT-based authentication to secure endpoints and ensure onl
 
 ### 1. Clone the Repository
 
-"""bash
+"""
 git clone <your-repository-url>
 cd task_manager
 """
@@ -50,7 +50,7 @@ cd task_manager
 
 ### 2. Create Virtual Environment
 
-"""bash
+"""
 python -m venv venv
 source venv/bin/activate   # Mac/Linux
 # venv\Scripts\activate    # Windows
@@ -60,7 +60,7 @@ source venv/bin/activate   # Mac/Linux
 
 ### 3. Install Dependencies
 
-"""bash
+"""
 pip install -r requirements.txt
 """
 
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 ### 4. Apply Migrations
 
-"""bash
+"""
 python manage.py makemigrations
 python manage.py migrate
 """
@@ -77,7 +77,7 @@ python manage.py migrate
 
 ### 5. Create Superuser (Optional - For Admin Role)
 
-"""bash
+"""
 python manage.py createsuperuser
 """
 
@@ -85,7 +85,7 @@ python manage.py createsuperuser
 
 ### 6. Run Development Server
 
-"""bash
+"""
 python manage.py runserver
 """
 
